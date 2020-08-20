@@ -1,4 +1,4 @@
-# Transactionmanagement
+# Transaction Management
 
 Classes are located in the transactions package; 
 the main class is TransactionManager. The Example class in the >main< package shows usage examples for the main methods
@@ -7,8 +7,6 @@ and examples of the requested checks. Only implement the requested checks.
 
 
 
- Regions and carriers<
-
 
 The  List&lt;String&gt; addRegion (String regionName, String... placeNames) method adds a region and places located in the region given their names.
 Places with already existing names are not added. The method returns the ordered lists of names of the added places.
@@ -16,11 +14,10 @@ Places with already existing names are not added. The method returns the ordered
 TheList&lt;String&gt; addCarrier (String carrierName, String... regionNames) method adds a carrier and the regions he supplies. Duplicate or non existent region names are ignored. 
 The method returns the ordered list of region names served by the carrier.
 
-The  List&lt;String&gt; getCarriersForRegion (String regionName) method returns the ordered list of the names of carriers supplying the region with the given name.<br>
+The  List&lt;String&gt; getCarriersForRegion (String regionName) method returns the ordered list of the names of carriers supplying the region with the given name.
 
 
 
->R2: Requests and offers<
 
 The  addRequest(String requestId, String placeName, String productId) method defines a request given its code, the place of delivery and the requested product's id.
 The method throws an exception if the place is undefined or if the code is duplicated.
@@ -29,8 +26,6 @@ The addOffer (String offerId, String placeName, String productId) method defines
 The method throws an exception if the place is undefined or if the code is duplicated.
 
 
-Transactions
-
 
 The  addTransaction(String transactionId, String carrierName, String requestId, String offerId)  method defines a transaction given its code, the carrier's name, and the request's and offer's ids.
 You can safely assume that the carrier, the request and the offer are defined.
@@ -38,7 +33,7 @@ Therefore, you must enforce the following checks: request and offer should not h
 the carrier should serve both the delivery and pickup places (i.e. the corresponding regions).
 If any of the previous checks should fail, an exception must be raised, otherwise the transaction must be associated to both the request and the offer.
 
-The <b> boolean evaluateTransaction(String transactionId, int score)  method assigns a score to the transaction. When generated, a transaction has a score equal to 0.
+The boolean evaluateTransaction(String transactionId, int score)  method assigns a score to the transaction. When generated, a transaction has a score equal to 0.
 The returned value is false if the score is not comprised between 1 and 10 (extremes included) ; otherwise the method returns true.
 
 Statistics
